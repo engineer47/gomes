@@ -1,3 +1,5 @@
 .project
 .pydevproject
 project.db
+*.pyc
+*mysite*.pyc

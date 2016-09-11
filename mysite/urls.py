@@ -8,12 +8,15 @@ from django.conf.urls.i18n import i18n_patterns
 from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
+from .views import SubmitContact
+
 admin.autodiscover()
 
 urlpatterns = [
     url(r'^sitemap\.xml$', 'django.contrib.sitemaps.views.sitemap',
         {'sitemaps': {'cmspages': CMSSitemap}}),
     url(r'^select2/', include('django_select2.urls')),
+    url(r'^contact_submit/', SubmitContact.as_view(), name='submit_contact'),
 ]
 
 urlpatterns += i18n_patterns('',
